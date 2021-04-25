@@ -1,3 +1,10 @@
+"""
+Challenge Website: https://leetcode.com/problems/longest-palindromic-substring/
+
+Given a string s, return the longest palindromic substring in s.
+"""
+
+
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         if len(s) == 0:
@@ -6,7 +13,7 @@ class Solution:
         longest = s[0]
         for i in range(len(s)):
             longest = max_palindrome(s, i - 1, i + 1, longest)  # odd length
-            longest = max_palindrome(s, i, i + 1, longest)      # even length
+            longest = max_palindrome(s, i, i + 1, longest)  # even length
         return longest
 
 

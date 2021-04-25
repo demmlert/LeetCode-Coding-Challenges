@@ -1,9 +1,12 @@
-class Solution(object):
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+"""
+Challenge Website: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+Given a string s, find the length of the longest substring without repeating characters.
+"""
+
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
         contained = dict()
         start = 0
         longest = 0
@@ -12,6 +15,7 @@ class Solution(object):
             contained[c] = i
             longest = max(longest, i + 1 - start)
         return longest
+
 
 if __name__ == "__main__":
     solution = Solution()
